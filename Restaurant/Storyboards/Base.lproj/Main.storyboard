@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22152" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22127"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Client View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ClientViewController" customModule="Restaurant" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e8C-h6-XNK">
+                                <rect key="frame" x="118" y="465.5" width="139" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Сделать заказ"/>
+                                <connections>
+                                    <action selector="clientActionButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="fTg-zM-9kC"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Хочу есть!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U4r-Wq-2Ms">
+                                <rect key="frame" x="131" y="106" width="113" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="e8C-h6-XNK" secondAttribute="bottom" multiplier="4:3" id="85Y-1R-cut"/>
+                            <constraint firstItem="U4r-Wq-2Ms" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="WFS-ib-1eE"/>
+                            <constraint firstItem="U4r-Wq-2Ms" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="86" id="iNP-5t-RZx"/>
+                            <constraint firstItem="e8C-h6-XNK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mW5-1F-hzi"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="clientActionButton" destination="e8C-h6-XNK" id="RQP-ca-7Js"/>
+                        <outlet property="clientStatusLabel" destination="U4r-Wq-2Ms" id="twe-Nl-DYO"/>
+                        <segue destination="kkO-Nj-2f7" kind="presentation" identifier="openKitchenVC" id="evi-3l-B4N"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="140" y="5"/>
+        </scene>
+        <!--Kitchen View Controller-->
+        <scene sceneID="uZN-ql-p4O">
+            <objects>
+                <viewController id="kkO-Nj-2f7" customClass="KitchenViewController" customModule="Restaurant" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0Zo-I3-TS7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8oA-oj-uHB">
+                                <rect key="frame" x="107.5" y="306" width="160" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Выполнить заказ"/>
+                                <connections>
+                                    <action selector="completeOrderButtonPressed" destination="kkO-Nj-2f7" eventType="touchUpInside" id="ST1-9R-99K"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Hdn-Pi-TgW"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="8oA-oj-uHB" firstAttribute="centerX" secondItem="0Zo-I3-TS7" secondAttribute="centerX" id="9Uq-bf-3fL"/>
+                            <constraint firstItem="8oA-oj-uHB" firstAttribute="centerY" secondItem="0Zo-I3-TS7" secondAttribute="centerY" id="nBz-sN-7Cr"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="U9F-hW-MIc"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FRJ-CW-p4u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="890" y="5"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
